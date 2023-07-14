@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, rgb(36, 36, 165), rgb(13, 13, 182));
+  font-family: sans-serif;
+  text-align: center;
+}
+
+header {
+  height: 50px;
+  background-color: rgb(62, 62, 226);
+  position: relative;
+}
+
+header h1 {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: slideTitle 1.2s;
+}
+
+.gameboard-area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.winner {
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.board {
+  width: 490px;
+  height: 420px;
+  background-color: blue;
+  border: solid 5px navy;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 3px 3px 13px rgb(3, 3, 45);
+}
+
+.resetBtn {
+  margin-top: 40px;
+  font-size: 1rem;
+  padding: 7px 11px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(21, 21, 214);
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1.5s 2s;
+}
+
+.resetBtn:hover {
+  background-color: rgb(17, 17, 185);
+}
+
+/* Class Lists */
+
+.myCell {
+  width: 54px;
+  height: 54px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: solid 4px navy;
+  margin: 4px;
+}
+
+.toggle-button {
+  animation: rotateBtn 1.5s 2s;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 600px) {
+  .board {
+    width: 350px;
+    height: 300px;
+  }
+
+  .myCell {
+    width: 34px;
+    height: 34px;
+  }
+
+  .resetBtn {
+    margin-top: 52px;
+  }
+}
+
+/* Animations */
+
+@keyframes slideTitle {
+  from {
+    transform: translate(-400px, -50%);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateBtn {
+  from {
+    transform: rotate(540deg);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  to {
+    transform: rotate(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
